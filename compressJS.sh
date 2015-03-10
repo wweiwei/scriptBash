@@ -1,3 +1,4 @@
 ####compress the js file
 #!/bin/bash
-tr -d ''
+file= read 
+cat $file |tr -d '\t\n'|tr -s ''|sed 's:/\*.*\*/::g'|sed 's/ \?\({}(),:\$\)/\1/g'
